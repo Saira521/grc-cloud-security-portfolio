@@ -1,0 +1,7 @@
+evidence_id,control_id,period,source,description,collected_by,collected_date,result,notes
+EV-001,LOG-001,2026-Q3,AWS CloudTrail,Organization trail configuration,GRC Analyst,2026-10-04,Pass,Design and implementation evidence only
+EV-002,LOG-001,2026-Q3,Security Operations,Sampled alert review records,GRC Analyst,2026-10-04,Partial,Only two months of consistent review evidence available
+EV-003,CHG-001,2026-Q3,GitHub,Sample of standard production pull requests,GRC Analyst,2026-10-04,Pass,Approvals and CI checks present
+EV-004,CHG-001,2026-Q3,Change Register,Emergency change samples,GRC Analyst,2026-10-04,Partial,Retrospective review missing for one sample
+EV-005,BCP-001,2026-Q3,Backup Service,Backup job history,GRC Analyst,2026-10-04,Pass,Backups configured and completing
+EV-006,BCP-001,2026-Q3,Recovery Test,Restoration test record,GRC Analyst,2026-10-04,Fail,No restoration test evidence for current review period

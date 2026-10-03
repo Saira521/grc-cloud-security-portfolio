@@ -1,0 +1,30 @@
+name: Validate GRC Controls
+
+on:
+  push:
+    paths:
+      - 'controls/**'
+      - 'automation/**'
+      - '.github/workflows/validate-grc.yml'
+  pull_request:
+    paths:
+      - 'controls/**'
+      - 'automation/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r automation/requirements.txt
+
+      - name: Validate control definitions
+        run: python automation/validate_controls.py

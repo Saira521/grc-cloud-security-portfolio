@@ -1,0 +1,4 @@
+finding_id,control_id,title,severity,condition,risk_effect,cause,owner,due_date,status
+FND-001,LOG-001,Insufficient evidence of consistent security alert review,High,Alerting is configured but period-based review evidence is incomplete,Residual likelihood of undetected malicious activity remains elevated,Operational review process not yet consistently evidenced,Security Lead,2026-11-15,Open
+FND-002,CHG-001,Emergency change retrospective review not consistently completed,Moderate,One sampled emergency change lacked documented retrospective review,Control cannot receive full operating-effectiveness credit,Emergency workflow does not enforce review completion,Engineering Manager,2026-11-01,Open
+FND-003,BCP-001,No current-period restoration test evidence,High,Backups exist but recoverability has not been demonstrated,Residual availability risk remains high,Recovery testing schedule not executed,Platform Lead,2026-11-30,Open

@@ -1,0 +1,145 @@
+controls:
+  - id: IAM-001
+    title: Privileged access is restricted and approved
+    objective: >-
+      Privileged access to scoped production systems is limited to authorized personnel,
+      approved by accountable owners, and periodically reviewed.
+    risk_refs: [RSK-001, RSK-002]
+    owner: Security
+    implementation:
+      - AWS IAM Identity Center groups and permission sets
+      - role-based administrative access
+      - periodic privileged access reviews
+    evidence_sources:
+      - IAM Identity Center configuration export
+      - access review records
+      - joiner/mover/leaver tickets
+    test_frequency: quarterly
+    automation_level: partial
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+      - "ISO/IEC 27017 - map using licensed/authorized standard copy"
+
+  - id: IAM-002
+    title: Strong authentication protects privileged access
+    objective: >-
+      Privileged administrative access requires strong authentication and is monitored for misuse.
+    risk_refs: [RSK-001]
+    owner: Security
+    implementation:
+      - MFA for workforce administrative access
+      - restricted break-glass accounts
+      - CloudTrail monitoring of privileged activity
+    evidence_sources:
+      - identity provider MFA configuration
+      - privileged user inventory
+      - CloudTrail events
+    test_frequency: monthly
+    automation_level: partial
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+
+  - id: DATA-001
+    title: Sensitive data stores are protected from unauthorized disclosure
+    objective: >-
+      Data stores containing restricted or confidential information are encrypted,
+      access-controlled, and protected from unintended public exposure.
+    risk_refs: [RSK-002]
+    owner: Platform Engineering
+    implementation:
+      - S3 Block Public Access
+      - encryption at rest
+      - least-privilege bucket policies
+    evidence_sources:
+      - AWS Config evaluation results
+      - S3 configuration export
+      - KMS configuration
+    test_frequency: continuous
+    automation_level: high
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+      - "ISO/IEC 27018 - map using licensed/authorized standard copy"
+
+  - id: LOG-001
+    title: Security-relevant activity is centrally logged and monitored
+    objective: >-
+      Security-relevant activity from scoped AWS environments is captured, protected,
+      retained, monitored, and available for investigation.
+    risk_refs: [RSK-003]
+    owner: Security
+    implementation:
+      - organization-wide CloudTrail
+      - centralized logging
+      - CloudWatch / Security Hub alerting
+    evidence_sources:
+      - CloudTrail configuration
+      - log destination configuration
+      - alert configuration
+      - sampled alert review records
+    test_frequency: monthly
+    automation_level: high
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+      - "ISO/IEC 27017 - map using licensed/authorized standard copy"
+
+  - id: IR-001
+    title: Security alerts and incidents are triaged and tracked
+    objective: >-
+      Security events are assessed using defined criteria, escalated when required,
+      and tracked through containment, remediation, and lessons learned.
+    risk_refs: [RSK-003]
+    owner: Security
+    implementation:
+      - incident severity criteria
+      - incident tickets
+      - post-incident review for material events
+    evidence_sources:
+      - incident register
+      - sampled incident tickets
+      - post-incident review records
+    test_frequency: quarterly
+    automation_level: low
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+
+  - id: CHG-001
+    title: Production changes are authorized, tested, and recoverable
+    objective: >-
+      Production changes are approved, tested, traceable to an authorized request,
+      and include rollback or recovery considerations appropriate to risk.
+    risk_refs: [RSK-004]
+    owner: Engineering
+    implementation:
+      - pull request approvals
+      - CI/CD checks
+      - change tickets for material production changes
+      - emergency change path with retrospective review
+    evidence_sources:
+      - pull request history
+      - deployment logs
+      - change tickets
+      - emergency change review records
+    test_frequency: quarterly
+    automation_level: partial
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"
+
+  - id: BCP-001
+    title: Critical data is backed up and recovery is tested
+    objective: >-
+      Critical data is backed up according to approved recovery objectives and
+      restoration capability is periodically tested.
+    risk_refs: [RSK-005]
+    owner: Platform Engineering
+    implementation:
+      - automated database backups
+      - object versioning / backup controls
+      - periodic restoration tests
+    evidence_sources:
+      - backup configuration
+      - backup job history
+      - restoration test records
+    test_frequency: quarterly
+    automation_level: partial
+    framework_refs:
+      - "ISO/IEC 27001:2022 - map using licensed/authorized standard copy"

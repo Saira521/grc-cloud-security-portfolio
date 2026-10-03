@@ -1,0 +1,4 @@
+action_id,finding_id,action,owner,target_date,validation_method,status
+CAPA-001,FND-001,Define monthly alert-review process and retain review evidence,Security Lead,2026-11-15,Review three consecutive monthly records,Open
+CAPA-002,FND-002,Add mandatory retrospective approval step to emergency change workflow,Engineering Manager,2026-11-01,Sample next three emergency changes,Open
+CAPA-003,FND-003,Perform restoration test against documented RTO/RPO and record results,Platform Lead,2026-11-30,Review completed restore-test report,Open

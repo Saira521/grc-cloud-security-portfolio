@@ -1,0 +1,9 @@
+asset_id,asset_name,asset_type,environment,aws_service,owner,data_classification,pii,criticality,internet_exposed,backup_required,rto_hours,rpo_hours,status
+AST-001,Production EKS Cluster,Compute/Platform,Production,EKS,Platform Engineering,Confidential,Yes,Critical,Indirect,Yes,4,1,Active
+AST-002,Primary Customer Database,Database,Production,RDS,Database Engineering,Restricted,Yes,Critical,No,Yes,2,1,Active
+AST-003,Customer Document Store,Object Storage,Production,S3,Platform Engineering,Restricted,Yes,High,No,Yes,8,4,Active
+AST-004,Public Web Distribution,Edge/CDN,Production,CloudFront,Platform Engineering,Public,No,High,Yes,No,4,4,Active
+AST-005,Security Event Trail,Logging,Production,CloudTrail,Security,Confidential,May contain PII,Critical,No,Yes,4,1,Active
+AST-006,Security Findings Hub,Security Monitoring,Production,Security Hub,Security,Confidential,No,High,No,No,8,8,Active
+AST-007,Source Code Repository,Source Control,Production,GitHub,Engineering,Confidential,No,Critical,Internet SaaS,Yes,8,4,Active
+AST-008,CI/CD Pipeline,Deployment,Production,GitHub Actions,Engineering,Confidential,No,Critical,Internet SaaS,Yes,4,1,Active
